@@ -104,5 +104,6 @@ select {
 
   .quizAnswer {
     width: 300px;
+    font-size: medium;
   }
 }
