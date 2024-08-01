@@ -1,4 +1,4 @@
-Quiziggles
+# Quiziggles
 
 I have made this project as an assignment under Dr. Angela Yu's web dev bootcamp.
 The assignment was to make something using any public API.
