@@ -1,0 +1,104 @@
+body {
+  font-family: "Playwrite HR Lijeva", cursive;
+  background-color: #059212;
+  color: #f3ff90;
+}
+
+.descripBox {
+  text-align: center;
+}
+
+.descripBox > p {
+  text-align: justify;
+}
+
+button {
+  background: #9bec00;
+  border-radius: 999px;
+  box-shadow: #9bec00 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Playwrite HR Lijeva", cursive;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: #ffee00 0 6px 15px -8px;
+}
+.heroSection {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px;
+  place-items: center;
+  /* background-color: antiquewhite; */
+}
+
+.quizAnswer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-content: space-evenly; */
+  align-items: center;
+  text-align: justify;
+  box-shadow: 0 0 50px 15px #06d001;
+  height: 320px;
+  width: 500px;
+  border-radius: 10%;
+  font-weight: 500;
+  /* background-color: antiquewhite; */
+}
+.cards {
+  /* border: 5px solid black; */
+  height: 500px;
+  width: 250px;
+  border-radius: 10%;
+  /* box-shadow: 5px 5px; */
+  box-shadow: 0 0 50px 15px #06d001;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-content: space-evenly; */
+  align-items: center;
+  gap: 25px;
+  height: 300px;
+}
+
+select {
+  border-radius: 999px;
+  box-sizing: border-box;
+}
+
+#answerBtn2 {
+  position: relative;
+  top: 20%;
+  left: 35%;
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .heroSection {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}

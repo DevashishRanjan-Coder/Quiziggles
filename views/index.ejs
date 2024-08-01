@@ -1,0 +1,92 @@
+<%- include("partials/header.ejs") %>
+
+    <body>
+        <div class="container descripBox">
+            <h1>Welcome to Quiziggles!</h1>
+            <p>Quiziggles is a portmanteau of Quiz + Giggles!
+                The premise is really simple.
+                Just choose what you want to be quized on
+                and every succesful answer will reward you with a joke for some giggles.
+            </p>
+            <small>So why be sad? When you can answer a quiz and giggle instead!!</small>
+
+        </div>
+
+        <div class="container heroSection">
+            <div>
+                <form class="form cards" action="/quizMe" method="post">
+                    <label class="question">Choose a category</label>
+                    <select name="type" class="form-select">
+                        <option value="rM">Rick & Morty</option>
+                        <option value="breakingBad">Breaking Bad</option>
+                    </select>
+                    <button type="submit" formaction="/quizMe">Quiz Me!</button>
+
+                </form>
+            </div>
+            <div class="quizAnswer">
+                <% if(choice===0){%>
+                    <p>Nothing to see here</p>
+                    <% } %>
+                        <% if(choice===1) {%>
+                            <% if(locals.quote){%>
+                                <%= quote %>
+                                    <form action="/solution" method="post">
+                                        <input type="text" name="userAnswer" />
+                                        <button type="submit" id="answerBtn1">Check</button>
+                                    </form>
+                                    <% } %>
+                                        <% if(flag && locals.joke){%>
+                                            <%= joke %>
+                                                <% }else if(!flag && locals.message){%>
+                                                    <%=message%>
+                                                        <%} %>
+                                                            <%}%>
+                                                                <% if(choice===2){%>
+                                                                    <% if(locals.charName){%>
+                                                                        <p>
+                                                                            Which of these characters made an appearance
+                                                                            in
+                                                                            <%= epNumber %>
+                                                                                <%= epName %>
+                                                                                    ?
+                                                                        </p>
+                                                                        <form action="/solution" method="post">
+                                                                            <input type="radio" id="rand1"
+                                                                                value="<%= random1 %>"
+                                                                                name="userAnswer" />
+                                                                            <label for="rand1">
+                                                                                <%= random1 %>
+                                                                            </label>
+                                                                            <input type="radio" id="rand2"
+                                                                                value="<%= random2 %>"
+                                                                                name="userAnswer" />
+                                                                            <label for="rand2">
+                                                                                <%= random2 %>
+                                                                            </label>
+                                                                            <br>
+                                                                            <input type="radio" id="correctAnswer"
+                                                                                value="<%=charName %>"
+                                                                                name="userAnswer" />
+                                                                            <label for="correctAnswer">
+                                                                                <%= charName %>
+                                                                            </label>
+                                                                            <input type="radio" id="idk" value="idk"
+                                                                                name="userAnswer" />
+                                                                            <label for="idk">I don't know </label>
+                                                                            <br>
+                                                                            <button type="submit"
+                                                                                id="answerBtn2">Check</button>
+                                                                        </form>
+                                                                        <% if(flag && locals.joke){%>
+                                                                            <%= joke %>
+                                                                                <% } %>
+                                                                                    <% } %>
+                                                                                        <% } %>
+
+            </div>
+        </div>
+
+    </body>
+
+    </html>
