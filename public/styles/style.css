@@ -103,6 +103,6 @@ select {
   }
 
   .quizAnswer {
-    width: fit-content;
+    width: 300px;
   }
 }
